@@ -16,16 +16,20 @@ services:
     image: mariadb:latest
     # env_file: .env
     environment:
-      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "new_cv_db"
     volumes:
       - mysqldata:/var/lib/mysql
     ports:
       - 3306:3306
   adminer:
-    image: adminer:latest
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "new_cv_db"
     ports:
-      - "8080:8080"
+      - "8080:80"
 
 volumes:
   mysqldata: {}
