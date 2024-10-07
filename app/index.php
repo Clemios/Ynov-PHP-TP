@@ -51,7 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $isAdmin) {
                 <button id="editBtn">Edit Personal Info</button>
                 <a href="logout.php">Logout</a>
             <?php else: ?>
-                <a href="login.php">Admin Login</a>
+                <a href="login.php"><button type="button" class="btn">Login</button></a>
+
+
             <?php endif; ?>
         </header>
 
